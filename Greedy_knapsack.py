@@ -8,27 +8,26 @@
 # Problem :-> Find Maximum profit of Fractional Knpasack ?
 
 #Note : If you get maximum Values in this Space Then You have Profit 
-
+#Hint : use Fraction
 
 def maximumProfit(W,w_arr,v_arr):
     zip = []
     for i in range(int(len(v_arr))):
-        zip.append((v_arr[i],w_arr[i]))
+        zip.append((v_arr[i]/w_arr[i],v_arr[i],w_arr[i]))
     zip.sort(reverse=True)
     ans = 0
     for i in range(len(zip)):
-        if zip[i][1] <= W:
-            ans += zip[i][0]
-            W -= zip[i][1]
+        if zip[i][2] <= W:
+            ans += zip[i][1]
+            W -= zip[i][2]
         elif W < 0  or W == 0:
             break
         else:
             cap = W
-            t = zip[i][0]/zip[i][1]
-            cap = cap *t
+            cap = cap *zip[i][0]
             ans += cap
             W = 0
-    print(ans)
+    print(ans,zip)
 
 if __name__ == "__main__":
     for _ in range(int(input())):
