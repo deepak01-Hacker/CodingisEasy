@@ -21,7 +21,7 @@ if __name__ == "__main__":
             hash_[element%3] += 1
         count = 0
         count += (hash_[0]*(hash_[0]-1))//2
-        count += hash_[0]*hash_[1]
+        count += hash_[1]*hash_[2]
         count += (hash_[0]*(hash_[0]-1)*(hash_[0]-2))//6
         count += (hash_[1]*(hash_[1]-1)*(hash_[1]-2))//6
         count += (hash_[2]*(hash_[2]-1)*(hash_[2]-2))//6
