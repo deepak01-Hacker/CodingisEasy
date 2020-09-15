@@ -5,7 +5,7 @@
     Contact us : a9649060356@gmail.com
 """
 
-#Problem : Given a Binary Tree. Find the Zig-Zag Level Order Traversal of the Binary Tree.
+#Problem : Given a Binary Tree. Vertical  Traversal of the Binary Tree.
 
 #TaGs : Easy , Tree , GeeksForGeeks
 
