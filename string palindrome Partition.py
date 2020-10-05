@@ -5,7 +5,7 @@
     Contact us : a9649060356@gmail.com
 
 """
-$Tags :- Dynamic Programming, Matrix Chain Multiplication ,String , List , InterviewPrepration ,DP-17
+#$Tags :- Dynamic Programming, Matrix Chain Multiplication ,String , List , InterviewPrepration ,DP-17
 
 #Problem :- Given a string, a partitioning of the string is a palindrome partitioning if every substring 
 #           of the partition is a palindrome. For example, “aba|b|bbabb|a|b|aba” is a palindrome partitioning of 
@@ -34,7 +34,7 @@ import sys
 
 def isPalindrome(st,start,end):
     ans = list(st)
-    check = ans[start:end]
+    check = ans[start:end+1]
     return check == check[::-1]
 
 def palindromePartition(st,i,j):
@@ -44,10 +44,11 @@ def palindromePartition(st,i,j):
         return 0
     mini = sys.maxsize
     for k in range(i,j):
-        temp = (palindromePartition(st,i,k)+palindromePartition(st,k+1,j))+1
+        temp = (1+palindromePartition(st,i,k)+palindromePartition(st,k+1,j))
         mini = min(temp,mini)
     return mini
+
 if __name__ == "__main__":
     for _ in range(int(input())):
         string = input()
-        print(palindromePartition(string,0,len(string)))
+        print(palindromePartition(string,0,len(string)-1))
